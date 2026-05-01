@@ -7,7 +7,12 @@ if exists("syntax_on")
   syntax reset
 endif
 
-set t_Co=256
+if has('nvim')
+  set notermguicolors
+else
+  set t_Co=256
+endif
+
 let g:colors_name = "truedark256"
 
 " CURSOR
@@ -71,8 +76,3 @@ hi LineNr       ctermfg=246
 hi ModeMsg      ctermfg=251
 hi SignColumn   ctermbg=NONE
 hi VertSplit    ctermfg=238 ctermbg=0
-
-" PLUGIN: coc.nvim
-
-hi CocMenuSel   ctermfg=0 ctermbg=7
-hi CocPumSearch ctermfg=NONE cterm=bold
